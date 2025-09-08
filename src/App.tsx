@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
+import Sales from "./pages/Sales";
+import Stock from "./pages/Stock";
+import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,10 +23,10 @@ const App = () => (
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="products" element={<Products />} />
-            <Route path="sales" element={<div>Sales Page Coming Soon</div>} />
-            <Route path="stock" element={<div>Stock & Expiry Page Coming Soon</div>} />
-            <Route path="reports" element={<div>Reports Page Coming Soon</div>} />
-            <Route path="analytics" element={<div>Analytics Page Coming Soon</div>} />
+            <Route path="sales" element={<Sales />} />
+            <Route path="stock" element={<Stock />} />
+            <Route path="reports" element={<Reports />} />
+            <Route path="analytics" element={<Reports />} />
             <Route path="notifications" element={<div>Notifications Page Coming Soon</div>} />
             <Route path="settings" element={<div>Settings Page Coming Soon</div>} />
           </Route>

@@ -1,6 +1,8 @@
 import { Plus, ShoppingCart, FileText, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const actions = [
   { 
@@ -30,6 +32,36 @@ const actions = [
 ];
 
 export default function QuickActions() {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleAction = (action: string) => {
+    switch (action) {
+      case "Add Product":
+        navigate("/products");
+        toast({
+          title: "Navigating to Products",
+          description: "Add new products in the Products section.",
+        });
+        break;
+      case "Record Sale":
+        navigate("/sales");
+        toast({
+          title: "Navigating to Sales",
+          description: "Record new sales in the Sales section.",
+        });
+        break;
+      case "View Reports":
+        navigate("/reports");
+        break;
+      case "Check Stock":
+        navigate("/stock");
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -41,6 +73,7 @@ export default function QuickActions() {
             key={action.label}
             variant="outline"
             className="h-auto p-4 flex flex-col items-center gap-2 hover:shadow-md transition-shadow"
+            onClick={() => handleAction(action.label)}
           >
             <action.icon className="h-6 w-6 text-primary" />
             <div className="text-center">

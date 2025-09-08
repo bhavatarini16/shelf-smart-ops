@@ -21,9 +21,9 @@
     --success-light: 142 76% 96%;
     
     /* Warning & alert colors */
-    --warning: 45 93% 47%;
-    --warning-foreground: 0 0% 100%;
-    --warning-light: 45 93% 96%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 9%;
+    --warning-light: 0 0% 100%;
     
     /* Danger & critical colors */
     --danger: 0 84% 60%;
